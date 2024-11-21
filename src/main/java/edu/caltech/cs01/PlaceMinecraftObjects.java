@@ -1,5 +1,6 @@
 package edu.caltech.cs01;
 
+import edu.caltech.cs01.utils.PlayerResponseUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -13,6 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PlaceMinecraftObjects extends JavaPlugin implements CommandExecutor, Listener {
+    private PlayerResponseUtil responseUtil;
    @Override
     public void onEnable(){
        getServer().getPluginManager().registerEvents(this, this);
@@ -47,22 +49,8 @@ public class PlaceMinecraftObjects extends JavaPlugin implements CommandExecutor
                block.setType(blockType);
                player.sendMessage(
                        ChatColor.GREEN + "Placed " + blockType.toString());
-           } catch (NumberFormatException e) {
-               player.sendMessage("Invalid coordinates or block type.");
-               e.printStackTrace();
-               return false;
-           } catch (CommandException e) {
-               player.sendMessage(ChatColor.RED + e.getMessage());
-               e.printStackTrace();
-               return false;
-           } catch (IllegalArgumentException e) {
-               player.sendMessage("Invalid block type");
-               e.printStackTrace();
-               return false;
-           } catch (Exception e) {
-               player.sendMessage("Unexcepted error occured!");
-               e.printStackTrace();
-               return false;
+           }  catch (Exception e) {
+               return responseUtil.sendMessage(player, e.getMessage(), ChatColor.RED);
            }
        }
            return false;
