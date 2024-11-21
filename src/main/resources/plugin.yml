@@ -1,0 +1,10 @@
+name: minecraft-setup
+version: 1.7
+main: edu.caltech.cs01.PlaceMinecraftObjects
+author: Shallon Kobusinge
+api-version: 1.7
+description: A plugin that allows players to place minecraft objects on the client
+commands:
+  place:
+    description: Place a block at a specified coordinates.
+    usage: /place <object_type>
