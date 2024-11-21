@@ -1,12 +1,11 @@
 package edu.caltech.cs01;
 
-import edu.caltech.cs01.utils.PlayerResponseUtil;
+import utils.PlayerResponseUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

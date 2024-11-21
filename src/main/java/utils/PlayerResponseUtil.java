@@ -1,4 +1,4 @@
-package edu.caltech.cs01.utils;
+package utils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
